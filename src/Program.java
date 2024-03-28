@@ -2,8 +2,10 @@
 import Clients.BaseClient;
 import Clients.ClientType1;
 import Inputers.ConsoleInputer;
+import OrderSavers.OrderSaverJSON;
 import Orders.Order;
 import Products.BaseProduct;
+import Products.ProductType1;
 
 public class Program {
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class Program {
                 Integer.parseInt(inputer.prompt("количество")),
                 Integer.parseInt(inputer.prompt("стоимость")));
 
-        System.out.println(order);
+        OrderSaverJSON osj = new OrderSaverJSON(order);
+        osj.save();
     }
 }

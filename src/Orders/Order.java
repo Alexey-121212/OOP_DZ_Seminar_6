@@ -5,11 +5,10 @@ import Products.BaseProduct;
 
 public class Order {
 
-    private int qnt;
-    private int price;
-
     private BaseClient client;
     private BaseProduct product;
+    private int qnt;
+    private int price;
 
     public Order(BaseClient client, BaseProduct product, int qnt, int price) {
         this.client = client;
@@ -18,29 +17,19 @@ public class Order {
         this.price = price;
     }
 
+    public int getQnt() {
+        return qnt;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
     public BaseClient getClient() {
         return client;
     }
 
     public BaseProduct getProduct() {
         return product;
-    }
-
-    public int getQnt() {
-        return qnt;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    @Override
-    public String toString() {
-        return "Orders.Order{" +
-                "qnt=" + qnt +
-                ", price=" + price +
-                ", client=" + client.getName() +
-                ", product=" + product.getName() +
-                '}';
     }
 }
